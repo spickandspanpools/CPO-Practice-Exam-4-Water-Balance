@@ -23,12 +23,15 @@
     .btn-secondary:hover { background-color: #cbd5e0; }
     .btn-primary { background-color: #0070f3; color: white; }
     .btn-primary:hover { background-color: #0056b3; }
+    .btn-success { background-color: #137333; color: white; }
+    .btn-success:hover { background-color: #0f5d29; }
     .quiz-feedback { margin-top: 15px; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; display: none; }
     .correct-style { background-color: #e6f4ea; color: #137333; border-left: 4px solid #137333; }
     .incorrect-style { background-color: #fce8e6; color: #c5221f; border-left: 4px solid #c5221f; }
     #quiz-results-screen { display: none; text-align: center; padding: 20px 0; }
     #quiz-results-screen h4 { font-size: 22px; color: #0d2c54; margin-bottom: 10px; }
     .score-badge { font-size: 48px; font-weight: 800; color: #0070f3; margin: 15px 0; }
+    .results-action-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -43,7 +46,6 @@
   </div>
 
   <form id="cpo-exam-form">
-    <!-- Q1 -->
     <div class="quiz-question-block active" id="qblock-1">
       <p class="question-text">1. What is the legal definition of 'negligence' as it applies to a certified pool operator's job performance?</p>
       <label class="quiz-option"><input type="radio" name="q1" value="A" onchange="revealAnswer(1, 'D')"> A) Failing to maintain a perfect score on a health inspection sheet</label>
@@ -53,7 +55,6 @@
       <div class="quiz-feedback" id="feedback-1"></div>
     </div>
 
-    <!-- Q2 -->
     <div class="quiz-question-block" id="qblock-2">
       <p class="question-text">2. Which liquid chemical reagent is used in standard pool test kits to perform colorimetric matching for pH balance?</p>
       <label class="quiz-option"><input type="radio" name="q2" value="A" onchange="revealAnswer(2, 'A')"> A) Phenol Red</label>
@@ -63,7 +64,6 @@
       <div class="quiz-feedback" id="feedback-2"></div>
     </div>
 
-    <!-- Q3 -->
     <div class="quiz-question-block" id="qblock-3">
       <p class="question-text">3. What pressure gauge reading tells an operator that a high-rate sand filter needs to be backwashed?</p>
       <label class="quiz-option"><input type="radio" name="q3" value="A" onchange="revealAnswer(3, 'C')"> A) When the pressure reaches zero.</label>
@@ -73,7 +73,6 @@
       <div class="quiz-feedback" id="feedback-3"></div>
     </div>
 
-    <!-- Q4 -->
     <div class="quiz-question-block" id="qblock-4">
       <p class="question-text">4. Which operational condition is considered an immediate health hazard that requires closing a public pool right away?</p>
       <label class="quiz-option"><input type="radio" name="q4" value="A" onchange="revealAnswer(4, 'B')"> A) The water temperature reaches 86 degrees.</label>
@@ -83,7 +82,6 @@
       <div class="quiz-feedback" id="feedback-4"></div>
     </div>
 
-    <!-- Q5 -->
     <div class="quiz-question-block" id="qblock-5">
       <p class="question-text">5. What occurs to pool infrastructure if the Saturation Index (SI) of the water drops significantly below the ideal target range (less than -0.3)?</p>
       <label class="quiz-option"><input type="radio" name="q5" value="A" onchange="revealAnswer(5, 'D')"> A) Calcium scale will deposit onto the pipes and tile lines.</label>
@@ -93,7 +91,6 @@
       <div class="quiz-feedback" id="feedback-5"></div>
     </div>
 
-    <!-- Q6 -->
     <div class="quiz-question-block" id="qblock-6">
       <p class="question-text">6. If the water's Saturation Index (SI) climbs well above the ideal target threshold (greater than +0.3), what is the most likely operational outcome?</p>
       <label class="quiz-option"><input type="radio" name="q6" value="A" onchange="revealAnswer(6, 'A')"> A) Excess calcium will drop out of solution, forming rough scale deposits on surfaces and equipment.</label>
@@ -103,7 +100,6 @@
       <div class="quiz-feedback" id="feedback-6"></div>
     </div>
 
-    <!-- Q7 -->
     <div class="quiz-question-block" id="qblock-7">
       <p class="question-text">7. What type of algae is notoriously difficult to eradicate because it roots deep into plaster surfaces and forms a protective waxy coating?</p>
       <label class="quiz-option"><input type="radio" name="q7" value="A" onchange="revealAnswer(7, 'C')"> A) Green Algae</label>
@@ -113,7 +109,6 @@
       <div class="quiz-feedback" id="feedback-7"></div>
     </div>
 
-    <!-- Q8 -->
     <div class="quiz-question-block" id="qblock-8">
       <p class="question-text">8. What can cause a Phenol Red pH test to turn a deep purple color, resulting in a false high reading during analysis?</p>
       <label class="quiz-option"><input type="radio" name="q8" value="A" onchange="revealAnswer(8, 'D')"> A) A low Cyanuric Acid level below 10 ppm</label>
@@ -123,7 +118,6 @@
       <div class="quiz-feedback" id="feedback-8"></div>
     </div>
 
-    <!-- Q9 -->
     <div class="quiz-question-block" id="qblock-9">
       <p class="question-text">9. Which chemical parameter serves as a primary food nutrient for algae, meaning its entry into pool water should be limited?</p>
       <label class="quiz-option"><input type="radio" name="q9" value="A" onchange="revealAnswer(9, 'A')"> A) Phosphates</label>
@@ -133,7 +127,6 @@
       <div class="quiz-feedback" id="feedback-9"></div>
     </div>
 
-    <!-- Q10 -->
     <div class="quiz-question-block" id="qblock-10">
       <p class="question-text">10. To prevent body entrapment, federal standards dictate that an approved 'unblockable' main drain cover must meet what minimum design requirement?</p>
       <label class="quiz-option"><input type="radio" name="q10" value="A" onchange="revealAnswer(10, 'B')"> A) It must be completely solid without any fluid intake holes.</label>
@@ -143,7 +136,6 @@
       <div class="quiz-feedback" id="feedback-10"></div>
     </div>
 
-    <!-- Q11 -->
     <div class="quiz-question-block" id="qblock-11">
       <p class="question-text">11. Maximum bather load limits for public municipal pools are calculated using which facility characteristic?</p>
       <label class="quiz-option"><input type="radio" name="q11" value="A" onchange="revealAnswer(11, 'A')"> A) The total surface area of pool water available to swimmers</label>
@@ -153,7 +145,6 @@
       <div class="quiz-feedback" id="feedback-11"></div>
     </div>
 
-    <!-- Q12 -->
     <div class="quiz-question-block" id="qblock-12">
       <p class="question-text">12. Which common sanitizer has an alkaline pH of approximately 9.0 to 14.0, causing the pool's pH to rise over time if it isn't adjusted with acid?</p>
       <label class="quiz-option"><input type="radio" name="q12" value="A" onchange="revealAnswer(12, 'A')"> A) Sodium Hypochlorite (Liquid Chlorine)</label>
@@ -163,7 +154,6 @@
       <div class="quiz-feedback" id="feedback-12"></div>
     </div>
 
-    <!-- Q13 -->
     <div class="quiz-question-block" id="qblock-13">
       <p class="question-text">13. Under OSHA standards, where must Safety Data Sheets (SDS) for facility chemicals be kept?</p>
       <label class="quiz-option"><input type="radio" name="q13" value="A" onchange="revealAnswer(13, 'D')"> A) Locked inside the facility director's home office</label>
@@ -173,7 +163,6 @@
       <div class="quiz-feedback" id="feedback-13"></div>
     </div>
 
-    <!-- Q14 -->
     <div class="quiz-question-block" id="qblock-14">
       <p class="question-text">14. If a facility's hydraulic flow rate meter reads significantly below design benchmarks while clean filter pressures remain low, what operational factor is the most likely cause of the restricted volume turnover?</p>
       <label class="quiz-option"><input type="radio" name="q14" value="A" onchange="revealAnswer(14, 'B')"> A) Media sand bed calcification layers</label>
@@ -183,7 +172,6 @@
       <div class="quiz-feedback" id="feedback-14"></div>
     </div>
 
-    <!-- Q15 -->
     <div class="quiz-question-block" id="qblock-15">
       <p class="question-text">15. Why must muriatic acid never be stored directly beneath or above liquid chlorine?</p>
       <label class="quiz-option"><input type="radio" name="q15" value="A" onchange="revealAnswer(15, 'A')"> A) Any accidental leaks or cross-contamination between acids and chlorines will cause a violent reaction that releases toxic, lethal chlorine gas</label>
@@ -193,7 +181,6 @@
       <div class="quiz-feedback" id="feedback-15"></div>
     </div>
 
-    <!-- Q16 -->
     <div class="quiz-question-block" id="qblock-16">
       <p class="question-text">16. What happens to a pool's Total Dissolved Solids (TDS) concentration over time due to high evaporation rates?</p>
       <label class="quiz-option"><input type="radio" name="q16" value="A" onchange="revealAnswer(16, 'C')"> A) TDS drops as solids escape into the atmosphere with the vapor.</label>
@@ -203,7 +190,6 @@
       <div class="quiz-feedback" id="feedback-16"></div>
     </div>
 
-    <!-- Q17 -->
     <div class="quiz-question-block" id="qblock-17">
       <p class="question-text">17. If an operator notices a broken or missing main drain cover while swimmers are in the pool, what action must be taken immediately?</p>
       <label class="quiz-option"><input type="radio" name="q17" value="A" onchange="revealAnswer(17, 'A')"> A) Evacuate the pool immediately and keep the facility closed until a certified replacement is installed.</label>
@@ -213,7 +199,6 @@
       <div class="quiz-feedback" id="feedback-17"></div>
     </div>
 
-    <!-- Q18 -->
     <div class="quiz-question-block" id="qblock-18">
       <p class="question-text">18. If a facility exceeds its maximum state-regulated bather load during peak hours, what immediate risk does this pose to water quality and swimmer safety?</p>
       <label class="quiz-option"><input type="radio" name="q18" value="A" onchange="revealAnswer(18, 'D')"> A) Direct erosion of the copper pipe heating exchanger cores</label>
@@ -223,7 +208,6 @@
       <div class="quiz-feedback" id="feedback-18"></div>
     </div>
 
-    <!-- Q19 -->
     <div class="quiz-question-block" id="qblock-19">
       <p class="question-text">19. An operator leaves a public pool open despite knowing about a severe safety hazard, resulting in a bather injury. This willful disregard for safety falls under what legal classification?</p>
       <label class="quiz-option"><input type="radio" name="q19" value="A" onchange="revealAnswer(19, 'B')"> A) Ordinary Negligence</label>
@@ -233,7 +217,6 @@
       <div class="quiz-feedback" id="feedback-19"></div>
     </div>
 
-    <!-- Q20 -->
     <div class="quiz-question-block" id="qblock-20">
       <p class="question-text">20. What water parameter measures the total concentration of alkaline buffers, defining the water's ability to resist rapid changes in pH?</p>
       <label class="quiz-option"><input type="radio" name="q20" value="A" onchange="revealAnswer(20, 'B')"> A) Calcium Hardness</label>
@@ -245,11 +228,14 @@
   </form>
 
   <div id="quiz-results-screen">
-    <h4>Part 2 Complete!</h4>
+    <h4>Exam 4 Complete!</h4>
     <p>Great job working through the second segment of theory review parameters.</p>
     <div class="score-badge" id="score-text-placeholder">0 / 20</div>
     <p id="score-commentary-text" style="color: #47525d; font-size: 15px; max-width: 500px; margin: 0 auto 20px; line-height: 1.5;"></p>
-    <button type="button" class="quiz-btn btn-primary" onclick="restartQuiz()">Retake Part 2</button>
+    <div class="results-action-container">
+      <button type="button" class="quiz-btn btn-secondary" onclick="restartQuiz()">Retake Exam 4</button>
+      <button type="button" class="quiz-btn btn-success" onclick="loadNextExam()">Next Exam</button>
+    </div>
   </div>
 
   <div class="quiz-nav-container" id="quiz-nav-controls">
@@ -277,7 +263,7 @@
     10: "An 'unblockable' drain cover must be large enough that a human body cannot completely cover and block it. PHTA standards define this as a minimum size of 18 inches by 23 inches.",
     11: "Bather load limits are based on surface area, allocating a specific number of square feet per swimmer depending on whether they are in shallow or deep water.",
     12: "Liquid chlorine has a high pH. Regular use will cause the pool's pH to rise, requiring the use of Muriatic Acid or Sodium Bisulfate to lower it.",
-    13: "OSHA mandates that Safety Data Sheets ($SDS$) must be readily accessible to all employees on all shifts, allowing quick review of hazard information in an emergency.",
+    13: "OSHA mandates that Safety Data Sheets (SDS) must be readily accessible to all employees on all shifts, allowing quick review of hazard information in an emergency.",
     14: "The hair and lint strainer basket collects coarse debris before it can impact the impeller. If severely impacted, it completely starves the pump's intake, choking hydraulic turnover rates while lines downstream remain clean.",
     15: "Muriatic acid is a strong acid, and sodium hypochlorite is an alkaline sanitizer. Mixing or crossing them during a chemical spill causes an immediate reaction that converts the chemical bonds into high-volume, highly toxic chlorine gas.",
     16: "Evaporation removes only pure water, leaving behind minerals and chemical residues. This causes TDS levels to climb, requiring fresh water make-up to dilute.",
@@ -347,6 +333,591 @@
     document.getElementById('prev-btn').disabled = true;
     document.getElementById('next-btn').innerText = "Next Question";
   }
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPO Practice Exam 3 - Water Contamination & Regulatory Safety</title>
+  <style>
+    body { background-color: transparent; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333333; }
+    .cpo-quiz-container { background-color: #f9fbfd; border: 1px solid #e1e8ed; border-radius: 8px; padding: 25px; max-width: 680px; margin: 10px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .quiz-header h3 { margin-top: 0; color: #0d2c54; font-size: 24px; margin-bottom: 6px; }
+    .quiz-header p { color: #606f7b; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+    .progress-bar-container { background-color: #e1e8ed; border-radius: 4px; height: 6px; width: 100%; margin-bottom: 25px; }
+    .progress-bar-fill { background-color: #0070f3; height: 100%; width: 5%; border-radius: 4px; transition: width 0.3s ease; }
+    .quiz-question-block { display: none; }
+    .quiz-question-block.active { display: block; }
+    .question-text { font-size: 16px; line-height: 1.5; font-weight: 600; margin-bottom: 16px; color: #0d2c54; }
+    .quiz-option { display: block; background: #ffffff; border: 1px solid #ccdad1; border-radius: 6px; padding: 12px 15px; margin-bottom: 10px; cursor: pointer; font-size: 14px; transition: all 0.2s ease; }
+    .quiz-option:hover { background: #f1f5f8; border-color: #a0aec0; }
+    .quiz-option input { margin-right: 12px; vertical-align: middle; }
+    .quiz-nav-container { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid #e1e8ed; }
+    .quiz-btn { padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; border: none; }
+    .btn-secondary { background-color: #e1e8ed; color: #47525d; }
+    .btn-secondary:hover { background-color: #cbd5e0; }
+    .btn-primary { background-color: #0070f3; color: white; }
+    .btn-primary:hover { background-color: #0056b3; }
+    .btn-success { background-color: #137333; color: white; }
+    .btn-success:hover { background-color: #0f5d29; }
+    .quiz-feedback { margin-top: 15px; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; display: none; }
+    .correct-style { background-color: #e6f4ea; color: #137333; border-left: 4px solid #137333; }
+    .incorrect-style { background-color: #fce8e6; color: #c5221f; border-left: 4px solid #c5221f; }
+    #quiz-results-screen { display: none; text-align: center; padding: 20px 0; }
+    #quiz-results-screen h4 { font-size: 22px; color: #0d2c54; margin-bottom: 10px; }
+    .score-badge { font-size: 48px; font-weight: 800; color: #0070f3; margin: 15px 0; }
+    .results-action-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="cpo-quiz-container">
+  <div class="quiz-header" id="quiz-header-region">
+    <h3>CPO Practice Exam 3 - Water Contamination & Regulatory Safety</h3>
+    <p id="question-counter-text">Question 1 of 20</p>
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="quiz-progress-bar"></div>
+    </div>
+  </div>
+
+  <form id="cpo-exam-form">
+    <div class="quiz-question-block active" id="qblock-1">
+      <p class="question-text">1. According to CDC and PHTA guidelines, if a diarrhealed fecal accident occurs in a public pool, the operator must close the pool, achieve a 20 ppm Free Chlorine residual, and maintain it for a specific holding period to reach the inactivation CT value for which resilient pathogen?</p>
+      <label class="quiz-option"><input type="radio" name="q1" value="A" onchange="revealAnswer(1, 'A')"> A) Cryptosporidium oocysts</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="B" onchange="revealAnswer(1, 'A')"> B) Giardia lamblia</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="C" onchange="revealAnswer(1, 'A')"> C) Norovirus</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="D" onchange="revealAnswer(1, 'A')"> D) E. coli</label>
+      <div class="quiz-feedback" id="feedback-1"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-2">
+      <p class="question-text">2. When responding to a formed (solid) stool accident in a public swimming pool, what is the primary reason the required Free Chlorine contact time is substantially shorter than a diarrhealed water event?</p>
+      <label class="quiz-option"><input type="radio" name="q2" value="A" onchange="revealAnswer(2, 'C')"> A) Solid stool dissolves instantly, neutralizing pathogens.</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="B" onchange="revealAnswer(2, 'C')"> B) The bacteria in solid stool are trapped inside and cannot escape into the water.</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="C" onchange="revealAnswer(2, 'C')"> C) Formed stool is significantly less likely to contain high concentrations of active gastrointestinal pathogens.</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="D" onchange="revealAnswer(2, 'C')"> D) Solid stool contains stabilizing cyanuric acid binders.</label>
+      <div class="quiz-feedback" id="feedback-2"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-3">
+      <p class="question-text">3. Which chemical water testing methodology is considered the industry standard for legally isolating and differentiating between Free Available Chlorine and Combined Chlorine?</p>
+      <label class="quiz-option"><input type="radio" name="q3" value="A" onchange="revealAnswer(3, 'D')"> A) OT (Orthotolidine) color tablets</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="B" onchange="revealAnswer(3, 'D')"> B) TDS Conductive Probes</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="C" onchange="revealAnswer(3, 'D')"> C) Phenol Red color matching</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="D" onchange="revealAnswer(3, 'D')"> D) DPD Titration or Colorimetric testing</label>
+      <div class="quiz-feedback" id="feedback-3"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-4">
+      <p class="question-text">4. Which filter media filters down to the smallest micron level?</p>
+      <label class="quiz-option"><input type="radio" name="q4" value="A" onchange="revealAnswer(4, 'A')"> A) Diatomaceous Earth (DE)</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="B" onchange="revealAnswer(4, 'A')"> B) High-Rate Silica Sand</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="C" onchange="revealAnswer(4, 'A')"> C) Zeolite specialized sand alternative</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="D" onchange="revealAnswer(4, 'A')"> D) Cartridge Filter Elements</label>
+      <div class="quiz-feedback" id="feedback-4"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-5">
+      <p class="question-text">5. How is Legionella pneumophila (Legionnaires' Disease) primarily transmitted to human hosts within public commercial aquatic or spa facilities?</p>
+      <label class="quiz-option"><input type="radio" name="q5" value="A" onchange="revealAnswer(5, 'A')"> A) Inhalation of water mist or airborne droplets containing the bacteria</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="B" onchange="revealAnswer(5, 'A')"> B) Ingestion of contaminated pool water while swimming</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="C" onchange="revealAnswer(5, 'A')"> C) Direct dermal absorption through open cuts or sores</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="D" onchange="revealAnswer(5, 'A')"> D) Fecal-oral transmission pathways due to poor operator sanitation</label>
+      <div class="quiz-feedback" id="feedback-5"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-6">
+      <p class="question-text">6. What is the primary operational purpose of adding a Diatomaceous Earth slurry powder to a DE filter grid system immediately after a cleaning cycle?</p>
+      <label class="quiz-option"><input type="radio" name="q6" value="A" onchange="revealAnswer(6, 'D')"> A) To sanitize the backwash lines from biofilms</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="B" onchange="revealAnswer(6, 'D')"> B) To raise the Total Alkalinity parameter of the water</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="C" onchange="revealAnswer(6, 'D')"> C) To coat the pump impeller and prevent friction cavitation</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="D" onchange="revealAnswer(6, 'D')"> D) To coat the fabric grids with a renewable filter layer that traps debris and prevents the grids from clogging</label>
+      <div class="quiz-feedback" id="feedback-6"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-7">
+      <p class="question-text">7. What undesirable chemical compound is produced when Free Available Chlorine reacts with ammonia, urea, and nitrogenous organic bather wastes?</p>
+      <label class="quiz-option"><input type="radio" name="q7" value="A" onchange="revealAnswer(7, 'C')"> A) Hypochlorous Acid</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="B" onchange="revealAnswer(7, 'C')"> B) Cyanuric Acid</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="C" onchange="revealAnswer(7, 'C')"> C) Chloramines (Combined Chlorine)</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="D" onchange="revealAnswer(7, 'C')"> D) Sodium Chloride</label>
+      <div class="quiz-feedback" id="feedback-7"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-8">
+      <p class="question-text">8. What does a facility's 'Turnover Rate' measure?</p>
+      <label class="quiz-option"><input type="radio" name="q8" value="A" onchange="revealAnswer(8, 'A')"> A) The time required for the filtration system to pump a volume of water equal to the total capacity of the pool</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="B" onchange="revealAnswer(8, 'A')"> B) The number of bathers using the pool in a single operational shift</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="C" onchange="revealAnswer(8, 'A')"> C) How often chemical chemical storage containers must be replaced in the pump room</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="D" onchange="revealAnswer(8, 'A')"> D) The speed at which water flows through the skimmer throats</label>
+      <div class="quiz-feedback" id="feedback-8"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-9">
+      <p class="question-text">9. What is the primary objective of a formal Lock Out / Tag Out (LOTO) energy containment protocol in an aquatic pump room?</p>
+      <label class="quiz-option"><input type="radio" name="q9" value="A" onchange="revealAnswer(9, 'A')"> A) To ensure machinery cannot be turned on by unauthorized personnel or accidentally energized while maintenance is underway</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="B" onchange="revealAnswer(9, 'A')"> B) To verify chemical chemical delivery lines are secure</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="C" onchange="revealAnswer(9, 'A')"> C) To restrict pump room access exclusively to managers</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="D" onchange="revealAnswer(9, 'A')"> D) To track energy use variations for state efficiency audits</label>
+      <div class="quiz-feedback" id="feedback-9"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-10">
+      <p class="question-text">10. When water pressure forces permanent, low-resistance paths through a sand filter bed and allows dirty water to bypass filtration, what is this failure called?</p>
+      <label class="quiz-option"><input type="radio" name="q10" value="A" onchange="revealAnswer(10, 'B')"> A) Flocculation</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="B" onchange="revealAnswer(10, 'B')"> B) Channeling</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="C" onchange="revealAnswer(10, 'B')"> C) Media Calcification</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="D" onchange="revealAnswer(10, 'B')"> D) Mudballing</label>
+      <div class="quiz-feedback" id="feedback-10"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-11">
+      <p class="question-text">11. In commercial pool configurations, why do open outdoor pools experience significantly accelerated heat loss during nighttime hours compared to daylight operation?</p>
+      <label class="quiz-option"><input type="radio" name="q11" value="A" onchange="revealAnswer(11, 'A')"> A) Rises in relative humidity speed up convective cooling cycles along the surface boundary</label>
+      <label class="quiz-option"><input type="radio" name="q11" value="B" onchange="revealAnswer(11, 'A')"> B) Liquid chemical sanitizer compounds degrade faster in dark environments</label>
+      <label class="quiz-option"><input type="radio" name="q11" value="C" onchange="revealAnswer(11, 'A')"> C) Drops in ambient air temperatures and wind exposure sharply increase bather surface evaporation</label>
+      <label class="quiz-option"><input type="radio" name="q11" value="D" onchange="revealAnswer(11, 'A')"> D) The ground surrounding the concrete pool shell naturally contracts</label>
+      <div class="quiz-feedback" id="feedback-11"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-12">
+      <p class="question-text">12. What is the primary chemical used to increase total alkalinity without causing a significant spike in pH?</p>
+      <label class="quiz-option"><input type="radio" name="q12" value="A" onchange="revealAnswer(12, 'A')"> A) Sodium Bicarbonate (Baking Soda)</label>
+      <label class="quiz-option"><input type="radio" name="q12" value="B" onchange="revealAnswer(12, 'A')"> B) Sodium Carbonate (Soda Ash)</label>
+      <label class="quiz-option"><input type="radio" name="q12" value="C" onchange="revealAnswer(12, 'A')"> C) Calcium Chloride</label>
+      <label class="quiz-option"><input type="radio" name="q12" value="D" onchange="revealAnswer(12, 'A')"> D) Sodium Bisulfate</label>
+      <div class="quiz-feedback" id="feedback-12"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-13">
+      <p class="question-text">13. When a diatomaceous earth (DE) filter undergoes a backwash sequence, what operational step is always mandatory for the operator before returning the pool to normal bather service?</p>
+      <label class="quiz-option"><input type="radio" name="q13" value="A" onchange="revealAnswer(13, 'C')"> A) Injecting liquid muriatic acid directly into the pump lint pot strainer basket</label>
+      <label class="quiz-option"><input type="radio" name="q13" value="B" onchange="revealAnswer(13, 'C')"> B) Raising the system baseline pressure by closing the main return valves halfway</label>
+      <label class="quiz-option"><input type="radio" name="q13" value="C" onchange="revealAnswer(13, 'C')"> C) Adding a fresh charge of DE powder slurry through the skimmer to pre-coat the grids</label>
+      <label class="quiz-option"><input type="radio" name="q13" value="D" onchange="revealAnswer(13, 'C')"> D) Purging the system air relief assembly for 20 continuous minutes</label>
+      <div class="quiz-feedback" id="feedback-13"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-14">
+      <p class="question-text">14. What environmental process is responsible for over 70% of total heat energy and water mass loss in commercial aquatic facilities?</p>
+      <label class="quiz-option"><input type="radio" name="q14" value="A" onchange="revealAnswer(14, 'A')"> A) Surface water evaporation</label>
+      <label class="quiz-option"><input type="radio" name="q14" value="B" onchange="revealAnswer(14, 'A')"> B) Structural leaking through concrete joints</label>
+      <label class="quiz-option"><input type="radio" name="q14" value="C" onchange="revealAnswer(14, 'A')"> C) Backwash wastewater disposal cycles</label>
+      <label class="quiz-option"><input type="radio" name="q14" value="D" onchange="revealAnswer(14, 'A')"> D) Bather splash-out onto deck drains</label>
+      <div class="quiz-feedback" id="feedback-14"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-15">
+      <p class="question-text">15. What does an automated controller's Oxidation-Reduction Potential (ORP) millivolt (mV) reading actively measure?</p>
+      <label class="quiz-option"><input type="radio" name="q15" value="A" onchange="revealAnswer(15, 'C')"> A) The exact parts-per-million concentration of free available chlorine</label>
+      <label class="quiz-option"><input type="radio" name="q15" value="B" onchange="revealAnswer(15, 'C')"> B) The absolute ratio of cyanuric acid stabilizer bounds</label>
+      <label class="quiz-option"><input type="radio" name="q15" value="C" onchange="revealAnswer(15, 'C')"> C) The relative sanitizing work potential and active chemical oxidation speed of the water</label>
+      <label class="quiz-option"><input type="radio" name="q15" value="D" onchange="revealAnswer(15, 'C')"> D) The total concentration of dissolved calcium chloride solids</label>
+      <div class="quiz-feedback" id="feedback-15"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-16">
+      <p class="question-text">16. To comply with the federal Virginia Graeme Baker (VGB) Pool and Spa Safety Act, what physical strategy must be maintained at all suction outlets?</p>
+      <label class="quiz-option"><input type="radio" name="q16" value="A" onchange="revealAnswer(16, 'D')"> A) Warning signs must be posted around the pool perimeter.</label>
+      <label class="quiz-option"><input type="radio" name="q16" value="B" onchange="revealAnswer(16, 'D')"> B) Pump motor velocity must be maxed out to clear obstructions.</label>
+      <label class="quiz-option"><input type="radio" name="q16" value="C" onchange="revealAnswer(16, 'D')"> C) Operators must verify line pressure settings daily.</label>
+      <label class="quiz-option"><input type="radio" name="q16" value="D" onchange="revealAnswer(16, 'D')"> D) Approved anti-entrapment drain covers must be securely installed over split or unblockable main drains.</label>
+      <div class="quiz-feedback" id="feedback-16"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-17">
+      <p class="question-text">17. Which combination of factors is the most effective defense against active algae blooms in public swimming facilities?</p>
+      <label class="quiz-option"><input type="radio" name="q17" value="A" onchange="revealAnswer(17, 'A')"> A) regularly brushing the pool walls.</label>
+      <label class="quiz-option"><input type="radio" name="q17" value="B" onchange="revealAnswer(17, 'A')"> B) Extremely high levels of cyanuric acid stabilizer</label>
+      <label class="quiz-option"><input type="radio" name="q17" value="C" onchange="revealAnswer(17, 'A')"> C) Daily additions of copper-sulfate heavy metal algaecides</label>
+      <label class="quiz-option"><input type="radio" name="q17" value="D" onchange="revealAnswer(17, 'A')"> D) Keeping the water temperature below 75 degrees</label>
+      <div class="quiz-feedback" id="feedback-17"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-18">
+      <p class="question-text">18. Under public health codes, what specific target must remain clearly visible from the lifeguard chair to satisfy water clarity safety standards?</p>
+      <label class="quiz-option"><input type="radio" name="q18" value="A" onchange="revealAnswer(18, 'A')"> A) The main drain cover at the deepest section of the pool floor</label>
+      <label class="quiz-option"><input type="radio" name="q18" value="B" onchange="revealAnswer(18, 'A')"> B) The shallow end step markers</label>
+      <label class="quiz-option"><input type="radio" name="q18" value="C" onchange="revealAnswer(18, 'A')"> C) The skimmer throat baskets</label>
+      <label class="quiz-option"><input type="radio" name="q18" value="D" onchange="revealAnswer(18, 'A')"> D) The pool perimeter tile lines</label>
+      <div class="quiz-feedback" id="feedback-18"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-19">
+      <p class="question-text">19. What is typically the earliest physical warning sign that an algae bloom is beginning, before the pool water changes color?</p>
+      <label class="quiz-option"><input type="radio" name="q19" value="A" onchange="revealAnswer(19, 'B')"> A) An abrupt drop in water temperature readings</label>
+      <label class="quiz-option"><input type="radio" name="q19" value="B" onchange="revealAnswer(19, 'B')"> B) A rapid, unexplained drop in Free Available Chlorine levels accompanied by slippery pool walls</label>
+      <label class="quiz-option"><input type="radio" name="q19" value="C" onchange="revealAnswer(19, 'B')"> C) A sudden increase in Total Alkalinity values</label>
+      <label class="quiz-option"><input type="radio" name="q19" value="D" onchange="revealAnswer(19, 'B')"> D) The water turning exceptionally clear</label>
+      <div class="quiz-feedback" id="feedback-19"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-20">
+      <p class="question-text">20. Which primary sanitizer has a very low pH, requiring operators to closely monitor Total Alkalinity to prevent acid damage to surfaces?</p>
+      <label class="quiz-option"><input type="radio" name="q20" value="A" onchange="revealAnswer(20, 'A')"> A) Trichloroisocyanuric Acid (Trichlor Tablets)</label>
+      <label class="quiz-option"><input type="radio" name="q20" value="B" onchange="revealAnswer(20, 'A')"> B) Calcium Hypochlorite</label>
+      <label class="quiz-option"><input type="radio" name="q20" value="C" onchange="revealAnswer(20, 'A')"> C) Sodium Hypochlorite</label>
+      <label class="quiz-option"><input type="radio" name="q20" value="D" onchange="revealAnswer(20, 'A')"> D) Lithium Hypochlorite</label>
+      <div class="quiz-feedback" id="feedback-20"></div>
+    </div>
+  </form>
+
+  <div id="quiz-results-screen">
+    <h4>Exam 3 Complete!</h4>
+    <p>Great job working through the first segment of theory review parameters.</p>
+    <div class="score-badge" id="score-text-placeholder">0 / 20</div>
+    <p id="score-commentary-text" style="color: #47525d; font-size: 15px; max-width: 500px; margin: 0 auto 20px; line-height: 1.5;"></p>
+    <div class="results-action-container">
+      <button type="button" class="quiz-btn btn-secondary" onclick="restartQuiz()">Retake Exam 3</button>
+      <button type="button" class="quiz-btn btn-success" onclick="loadNextExam()">Next Exam</button>
+    </div>
+  </div>
+
+  <div class="quiz-nav-container" id="quiz-nav-controls">
+    <button type="button" class="quiz-btn btn-secondary" id="prev-btn" onclick="changeQuestion(-1)" disabled>Previous</button>
+    <button type="button" class="quiz-btn btn-primary" id="next-btn" onclick="changeQuestion(1)">Next Question</button>
+  </div>
+</div>
+
+<script>
+  let currentQuestion = 1;
+  const totalQuestions = 20;
+  let runningScore = 0;
+  const scoreTrackingArray = new Array(totalQuestions + 1).fill(0);
+
+  const solutionExplanations = {
+    1: "Cryptosporidium has a thick outer shell making it highly resistant to chlorine sanitizer. It is the target pathogen that dictates the extreme hyperchlorination contact times used for diarrhealed incidents.",
+    2: "Formed stool is significantly less likely to contain high concentrations of active gastrointestinal pathogens.",
+    3: "DPD (N,N-diethyl-p-phenylenediamine) reagents react specifically with oxidized halogens to separate Free and Combined chlorine fractions. OT testing can only determine Total chlorine.",
+    4: "Diatomaceous earth grids filter particulate loading structures efficiently down to an ultra-fine metric of 2 to 4 microns.",
+    5: "Inhalation of water mist or airborne droplets containing the bacteria",
+    6: "To coat the fabric grids with a renewable filter layer that traps debris and prevents the grids from clogging",
+    7: "Ammonia bonds with chlorine atoms to generate chloramines. These compounds slow sanitizing efficiency, produce foul 'pool odors,' and cause severe red-eye irritation.",
+    8: "What does a facility's 'Turnover Rate' measure?",
+    9: "To ensure machinery cannot be turned on by unauthorized personnel or accidentally energized while maintenance is underway",
+    10: "When water pressure forces permanent, low-resistance paths through a sand filter bed and allows dirty water to bypass filtration, what is this failure called?",
+    11: "Evaporation accelerates rapidly at night due to the combined forces of lower ambient air temperatures and wind speed working across open thermal surface boundaries, dragging heat away.",
+    12: "What is the primary chemical used to increase total alkalinity without causing a significant spike in pH?",
+    13: "When a DE unit backwashes, its dirty cake layer is completely discarded down the waste line. To retain mechanical efficacy, operators must introduce a clean batch of powder to coat the underlying fabric elements.",
+    14: "Evaporation carries away large amounts of thermal energy and water. Using a pool cover when the facility is closed is the best way to prevent this loss.",
+    15: "ORP does not measure chlorine ppm. Instead, it measures the electrical potential in millivolts (mV) to determine how effectively the sanitizer can oxidize organic waste.",
+    16: "The VGB Act mandates certified anti-entrapment drain covers and multiple main drains spaced at least 3 feet apart. This prevents a single bather from blocking a drain and becoming trapped by suction.",
+    17: "Physical surface brushing tears free the protective biological shell layer of certain aggressive growths, allowing standard pool sanitizers to penetrate and kill the spores.",
+    18: "If the main drain cover at the bottom of the pool is not clearly visible from the deck due to cloudiness, the pool must be closed immediately to prevent drowning hazards.",
+    19: "As microscopic algae begins to grow, it consumes chlorine rapidly. Slippery pool walls and surfaces are another early sign of an impending bloom.",
+    20: "Which primary sanitizer has a very low pH, requiring operators to closely monitor Total Alkalinity to prevent acid damage to surfaces?"
+  };
+
+  function revealAnswer(qNum, correctLetter) {
+    const selectedOption = document.querySelector(`input[name="q${qNum}"]:checked`);
+    const feedbackBox = document.getElementById(`feedback-${qNum}`);
+    if (!selectedOption) return;
+    feedbackBox.style.display = "block";
+    if (selectedOption.value === correctLetter) {
+      feedbackBox.innerHTML = `<strong>✓ Correct!</strong> ${solutionExplanations[qNum]}`;
+      feedbackBox.className = "quiz-feedback correct-style";
+      scoreTrackingArray[qNum] = 1; 
+    } else {
+      feedbackBox.innerHTML = `<strong>✗ Incorrect.</strong> The correct choice is ${correctLetter}. ${solutionExplanations[qNum]}`;
+      feedbackBox.className = "quiz-feedback incorrect-style";
+      scoreTrackingArray[qNum] = 0;
+    }
+    updateScore();
+  }
+
+  function changeQuestion(direction) {
+    document.getElementById(`qblock-${currentQuestion}`).classList.remove('active');
+    currentQuestion += direction;
+    if (currentQuestion > totalQuestions) { showResults(); return; }
+    document.getElementById(`qblock-${currentQuestion}`).classList.add('active');
+    document.getElementById('question-counter-text').innerText = `Question ${currentQuestion} of ${totalQuestions}`;
+    document.getElementById('quiz-progress-bar').style.width = `${(currentQuestion / totalQuestions) * 100}%`;
+    document.getElementById('prev-btn').disabled = (currentQuestion === 1);
+    document.getElementById('next-btn').innerText = (currentQuestion === totalQuestions) ? "Finish & See Score" : "Next Question";
+  }
+
+  function updateScore() { runningScore = scoreTrackingArray.reduce((a, b) => a + b, 0); }
+
+  function showResults() {
+    document.getElementById('cpo-exam-form').style.display = "none";
+    document.getElementById('quiz-header-region').style.display = "none";
+    document.getElementById('quiz-nav-controls').style.display = "none";
+    const ExtBlock = document.getElementById('quiz-results-screen');
+    const scoreBadge = document.getElementById('score-text-placeholder');
+    const commentary = document.getElementById('score-commentary-text');
+    ExtBlock.style.display = "block";
+    scoreBadge.innerText = `${runningScore} / ${totalQuestions}`;
+    const percentage = (runningScore / totalQuestions) * 100;
+    if (percentage >= 80) { commentary.innerText = "Superb job! You passed Part 1 with excellent operational score markings."; }
+    else { commentary.innerText = "Review the basic definitions of sanitation rules and try again!"; }
+  }
+
+  function restartQuiz() {
+    currentQuestion = 1; runningScore = 0; scoreTrackingArray.fill(0);
+    document.getElementById('cpo-exam-form').reset();
+    const feedbacks = document.querySelectorAll('.quiz-feedback');
+    feedbacks.forEach(f => { f.style.display = "none"; f.className = "quiz-feedback"; });
+    document.getElementById('cpo-exam-form').style.display = "block";
+    document.getElementById('quiz-header-region').style.display = "block";
+    document.getElementById('quiz-nav-controls').style.display = "flex";
+    document.getElementById('quiz-results-screen').style.display = "none";
+    document.querySelectorAll('.quiz-question-block').forEach(b => b.classList.remove('active'));
+    document.getElementById('qblock-1').classList.add('active');
+    document.getElementById('question-counter-text').innerText = `Question 1 of ${totalQuestions}`;
+    document.getElementById('quiz-progress-bar').style.width = "5%";
+    document.getElementById('prev-btn').disabled = true;
+    document.getElementById('next-btn').innerText = "Next Question";
+  }
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced CPO Math Practice Exam</title>
+  <style>
+    body { background-color: transparent; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333333; }
+    .cpo-quiz-container { background-color: #f9fbfd; border: 1px solid #e1e8ed; border-radius: 8px; padding: 25px; max-width: 680px; margin: 10px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .quiz-header h3 { margin-top: 0; color: #0d2c54; font-size: 24px; margin-bottom: 6px; }
+    .quiz-header p { color: #606f7b; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+    .progress-bar-container { background-color: #e1e8ed; border-radius: 4px; height: 6px; width: 100%; margin-bottom: 25px; }
+    .progress-bar-fill { background-color: #0070f3; height: 100%; width: 10%; border-radius: 4px; transition: width 0.3s ease; }
+    .quiz-question-block { display: none; }
+    .quiz-question-block.active { display: block; }
+    .question-text { font-size: 16px; line-height: 1.5; font-weight: 600; margin-bottom: 16px; color: #0d2c54; }
+    .quiz-option { display: block; background: #ffffff; border: 1px solid #ccdad1; border-radius: 6px; padding: 12px 15px; margin-bottom: 10px; cursor: pointer; font-size: 14px; transition: all 0.2s ease; }
+    .quiz-option:hover { background: #f1f5f8; border-color: #a0aec0; }
+    .quiz-option input { margin-right: 12px; vertical-align: middle; }
+    .quiz-nav-container { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid #e1e8ed; }
+    .quiz-btn { padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 5px; cursor: pointer; transition: all 0.2s ease; border: none; }
+    .btn-secondary { background-color: #e1e8ed; color: #47525d; }
+    .btn-secondary:hover { background-color: #cbd5e0; }
+    .btn-primary { background-color: #0070f3; color: white; }
+    .btn-primary:hover { background-color: #0056b3; }
+    .btn-success { background-color: #137333; color: white; }
+    .btn-success:hover { background-color: #0f5d29; }
+    .quiz-feedback { margin-top: 15px; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; display: none; }
+    .correct-style { background-color: #e6f4ea; color: #137333; border-left: 4px solid #137333; }
+    .incorrect-style { background-color: #fce8e6; color: #c5221f; border-left: 4px solid #c5221f; }
+    #quiz-results-screen { display: none; text-align: center; padding: 20px 0; }
+    #quiz-results-screen h4 { font-size: 22px; color: #0d2c54; margin-bottom: 10px; }
+    .score-badge { font-size: 48px; font-weight: 800; color: #0070f3; margin: 15px 0; }
+    .results-action-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="cpo-quiz-container">
+  <div class="quiz-header" id="quiz-header-region">
+    <h3>CPO Advanced Calculations Test</h3>
+    <p id="question-counter-text">Question 1 of 10</p>
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="quiz-progress-bar"></div>
+    </div>
+  </div>
+
+  <form id="cpo-exam-form">
+    <div class="quiz-question-block active" id="qblock-1">
+      <p class="question-text">1. A rectangular swimming pool measures 50 feet long by 20 feet wide. The depth slants uniformly from 3 feet in the shallow end to 5 feet in the deep end. What is the total volume of this pool in gallons?</p>
+      <label class="quiz-option"><input type="radio" name="q1" value="A" onchange="revealAnswer(1, 'C')"> A) 40,000 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="B" onchange="revealAnswer(1, 'C')"> B) 37,500 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="C" onchange="revealAnswer(1, 'C')"> C) 30,000 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="D" onchange="revealAnswer(1, 'C')"> D) 22,500 gallons</label>
+      <div class="quiz-feedback" id="feedback-1"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-2">
+      <p class="question-text">2. A rectangular public swimming pool measures 60 feet long by 30 feet wide. Over a hot weekend, evaporation causes the water level to drop straight down by exactly 2 inches. How many total gallons of water did the pool lose?</p>
+      <label class="quiz-option"><input type="radio" name="q2" value="A" onchange="revealAnswer(2, 'C')"> A) 1,350 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="B" onchange="revealAnswer(2, 'C')"> B) 27,000 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="C" onchange="revealAnswer(2, 'C')"> C) 2,250 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="D" onchange="revealAnswer(2, 'C')"> D) 18,000 gallons</label>
+      <div class="quiz-feedback" id="feedback-2"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-3">
+      <p class="question-text">3. Your pool volume is 20,000 gallons. Your current Total Alkalinity reading is 70 ppm, and your target is 100 ppm. How many pounds of Sodium Bicarbonate do you need to add?</p>
+      <label class="quiz-option"><input type="radio" name="q3" value="A" onchange="revealAnswer(3, 'D')"> A) 4.2 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="B" onchange="revealAnswer(3, 'D')"> B) 5.6 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="C" onchange="revealAnswer(3, 'D')"> C) 6.8 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q3" value="D" onchange="revealAnswer(3, 'D')"> D) 8.4 lbs</label>
+      <div class="quiz-feedback" id="feedback-3"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-4">
+      <p class="question-text">4. A commercial pool has a total calculated volume of 72,000 gallons. State codes mandate a minimum 6-hour turnover rate for this facility type. What is the required design flow rate in Gallons Per Minute (GPM)?</p>
+      <label class="quiz-option"><input type="radio" name="q4" value="A" onchange="revealAnswer(4, 'B')"> A) 12,000 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="B" onchange="revealAnswer(4, 'B')"> B) 200 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="C" onchange="revealAnswer(4, 'B')"> C) 150 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q4" value="D" onchange="revealAnswer(4, 'B')"> D) 120 GPM</label>
+      <div class="quiz-feedback" id="feedback-4"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-5">
+      <p class="question-text">5. You check the flow meter on a 45,000-gallon public pool and read an active flow rate of 125 Gallons Per Minute (GPM). What is the actual turnover rate of the pool in hours?</p>
+      <label class="quiz-option"><input type="radio" name="q5" value="A" onchange="revealAnswer(5, 'C')"> A) 4.5 hours</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="B" onchange="revealAnswer(5, 'C')"> B) 5.2 hours</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="C" onchange="revealAnswer(5, 'C')"> C) 6.0 hours</label>
+      <label class="quiz-option"><input type="radio" name="q5" value="D" onchange="revealAnswer(5, 'C')"> D) 7.5 hours</label>
+      <div class="quiz-feedback" id="feedback-5"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-6">
+      <p class="question-text">6. A pool system operates at a flow rate of 120 Gallons Per Minute (GPM). It utilizes high-rate sand filtration, which possesses a maximum design filtration rate of 15 GPM per square foot. What is the minimum required filter surface area in square feet?</p>
+      <label class="quiz-option"><input type="radio" name="q6" value="A" onchange="revealAnswer(6, 'B')"> A) 18.0 sq ft</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="B" onchange="revealAnswer(6, 'B')"> B) 8.0 sq ft</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="C" onchange="revealAnswer(6, 'B')"> C) 12.5 sq ft</label>
+      <label class="quiz-option"><input type="radio" name="q6" value="D" onchange="revealAnswer(6, 'B')"> D) 6.0 sq ft</label>
+      <div class="quiz-feedback" id="feedback-6"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-7">
+      <p class="question-text">7. A facility uses a cartridge system providing a total filter surface area of 300 square feet. The filter media rate is 0.375 GPM per square foot, what is the maximum allowable flow rate in GPM for this filter system?</p>
+      <label class="quiz-option"><input type="radio" name="q7" value="A" onchange="revealAnswer(7, 'A')"> A) 112.5 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="B" onchange="revealAnswer(7, 'A')"> B) 150.0 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="C" onchange="revealAnswer(7, 'A')"> C) 80.0 GPM</label>
+      <label class="quiz-option"><input type="radio" name="q7" value="D" onchange="revealAnswer(7, 'A')"> D) 225.0 GPM</label>
+      <div class="quiz-feedback" id="feedback-7"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-8">
+      <p class="question-text">8. A 50,000-gallon aquatic center pool has a Total Chlorine (TC) reading of 4.2 ppm and a Free Chlorine (FC) of 3.4 ppm. How many gallons of Sodium Hypochlorite (12%) must be added to reach exact breakpoint chlorination?</p>
+      <label class="quiz-option"><input type="radio" name="q8" value="A" onchange="revealAnswer(8, 'A')"> A) 1.92 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="B" onchange="revealAnswer(8, 'A')"> B) 3.44 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="C" onchange="revealAnswer(8, 'A')"> C) 0.85 gallons</label>
+      <label class="quiz-option"><input type="radio" name="q8" value="D" onchange="revealAnswer(8, 'A')"> D) 4.60 gallons</label>
+      <div class="quiz-feedback" id="feedback-8"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-9">
+      <p class="question-text">9. Calculate the Saturation Index (SI) for a commercial hot tub feature with the following readings: pH 7.6, Temp 102°F, Calcium Hardness 300 ppm, Total Alkalinity 150 ppm, and TDS 1200 ppm. What is the saturation index?</p>
+      <label class="quiz-option"><input type="radio" name="q9" value="A" onchange="revealAnswer(9, 'B')"> A) -0.1 (Balanced)</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="B" onchange="revealAnswer(9, 'B')"> B) +0.6 (Scale-forming)</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="C" onchange="revealAnswer(9, 'B')"> C) +0.2 (Balanced)</label>
+      <label class="quiz-option"><input type="radio" name="q9" value="D" onchange="revealAnswer(9, 'B')"> D) -0.4 (Corrosive)</label>
+      <div class="quiz-feedback" id="feedback-9"></div>
+    </div>
+
+    <div class="quiz-question-block" id="qblock-10">
+      <p class="question-text">10. A 60,000-gallon pool has a Total Chlorine reading of 2.3 ppm and a Free Chlorine reading of 1.5 ppm. Calculate how many pounds of Calcium Hypochlorite (67%) are needed to achieve breakpoint chlorination.</p>
+      <label class="quiz-option"><input type="radio" name="q10" value="B" onchange="revealAnswer(10, 'B')"> A) 2.450 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="B" onchange="revealAnswer(10, 'B')"> B) 4.875 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="B" onchange="revealAnswer(10, 'B')"> C) 6.000 lbs</label>
+      <label class="quiz-option"><input type="radio" name="q10" value="B" onchange="revealAnswer(10, 'B')"> D) 7.825 lbs</label>
+      <div class="quiz-feedback" id="feedback-10"></div>
+    </div>
+  </form>
+
+  <div id="quiz-results-screen">
+    <h4>Exam 2 Complete!</h4>
+    <p>Great job working through these specialized hydraulic and sizing questions.</p>
+    <div class="score-badge" id="score-text-placeholder">0 / 10</div>
+    <p id="score-commentary-text" style="color: #47525d; font-size: 15px; max-width: 500px; margin: 0 auto 20px; line-height: 1.5;"></p>
+    <div class="results-action-container">
+      <button type="button" class="quiz-btn btn-secondary" onclick="restartQuiz()">Retake Exam 2</button>
+      <button type="button" class="quiz-btn btn-success" onclick="loadNextExam()">Next Exam</button>
+    </div>
+  </div>
+
+  <div class="quiz-nav-container" id="quiz-nav-controls">
+    <button type="button" class="quiz-btn btn-secondary" id="prev-btn" onclick="changeQuestion(-1)" disabled>Previous</button>
+    <button type="button" class="quiz-btn btn-primary" id="next-btn" onclick="changeQuestion(1)">Next Question</button>
+  </div>
+</div>
+
+<script>
+  let currentQuestion = 1;
+  const totalQuestions = 10;
+  let runningScore = 0;
+  const scoreTrackingArray = new Array(totalQuestions + 1).fill(0);
+
+  const solutionExplanations = {
+    1: "Average Depth = (3 + 5) ÷ 2 = 4 feet. Volume = 50ft (Length) x 20ft (Width) x 4ft (Avg Depth) x 7.5 (Gal multiplier) = 30,000 gallons.",
+    2: "Step 1: Calculate Surface Area = 60ft x 30ft = 1,800 sq ft. Step 2: Convert water loss in inches to feet = 2 inches ÷ 12 inches/ft = 0.1667 feet. Step 3: Find Cubic Feet lost = 1,800 sq ft x 0.1667 ft = 300 cubic feet. Step 4: Convert to gallons = 300 cu ft x 7.5 gallons/cu ft = 2,250 total gallons lost.",
+    3: "Desired change = 30 ppm (100 - 70). Pool Factor = 2 (20,000 / 10,000). Dosing unit factor = 3 (30 ppm / 10 ppm baseline increment). Formula: 2 (Pool Factor) x 3 (Increment Units) x 1.4 lbs = 8.4 lbs.",
+    4: "Formula: Flow Rate (GPM) = Pool Volume ÷ Turnover Rate (Hours) ÷ 60 minutes. Calculation: 72,000 ÷ 6 ÷ 60 = 200 GPM.",
+    5: "Formula: Turnover Rate (Hours) = Pool Volume ÷ Flow Rate (GPM) ÷ 60 minutes. Calculation: 45,000 ÷ 125 ÷ 60 = 6.0 hours.",
+    6: "Formula: Filter Area (Sq Ft) = Total Flow Rate (GPM) ÷ Filter Sizing Design Rate (GPM/Sq Ft). Calculation: 120 GPM ÷ 15 GPM/sq ft = 8.0 square feet.",
+    7: "Formula: Max Flow Rate (GPM) = Filter Area (Sq Ft) x Filter Media Rate (GPM/Sq Ft). Calculation: 300 sq ft x 0.375 GPM/sq ft = 112.5 GPM.",
+    8: "Step 1: CC = 4.2 TC - 3.4 FC = 0.8 ppm. Step 2: Breakpoint Target = 0.8 CC x 10 = 8.0 ppm. Step 3: Adjustment = 8.0 Target - 3.4 current FC = 4.6 ppm change. Step 4: Volume Pool Factor = 5 (50,000 / 10,000). Step 5: Ounce dose = 5 (Factor) x 4.6 (Change) x 10.7 oz (Baseline parameter for 12% Sodium Hypochlorite) = 246.1 total ounces. Step 6: Convert to gallons = 246.1 oz / 128 oz per gallon = 1.92 gallons.",
+    9: "Identify the reference factors from the handbook index: 102°F maps to a Temperature Factor (TF) of 0.9; 300 ppm Calcium Hardness provides a Hardness Factor (CF) of 2.1; 150 ppm Total Alkalinity establishes an Alkalinity Factor (AF) of 2.2; and a 1,200 ppm TDS creates a TDS Factor constant of 12.2. Mathematical equation: 7.6 (pH) + 0.9 (TF) + 2.1 (CF) + 2.2 (AF) - 12.2 (TDS Factor) = +0.6. Since an index of +0.6 rests safely above the standard scale threshold of +0.3, the spa water environment is actively Scale-forming.",
+    10: "Step 1: CC = 2.3 TC - 1.5 FC = 0.8 ppm. Step 2: Breakpoint Target = 0.8 CC x 10 = 8.0 ppm. Step 3: Desired Change = 8.0 Target - 1.5 current FC = 6.5 ppm change. Step 4: Volume Pool Factor = 6 (60,000 / 10,000). Step 5: Ounce dose = 6 x 6.5 x 2 oz = 78 total ounces. Step 6: Convert to weight in pounds = 78 ounces / 16 ounces per pound = 4.875 lbs."
+  };
+
+  function revealAnswer(qNum, correctLetter) {
+    const selectedOption = document.querySelector(`input[name="q${qNum}"]:checked`);
+    const feedbackBox = document.getElementById(`feedback-${qNum}`);
+    if (!selectedOption) return;
+    feedbackBox.style.display = "block";
+    if (selectedOption.value === correctLetter) {
+      feedbackBox.innerHTML = `<strong>✓ Correct!</strong> ${solutionExplanations[qNum]}`;
+      feedbackBox.className = "quiz-feedback correct-style";
+      scoreTrackingArray[qNum] = 1; 
+    } else {
+      feedbackBox.innerHTML = `<strong>✗ Incorrect.</strong> The correct choice is ${correctLetter}. ${solutionExplanations[qNum]}`;
+      feedbackBox.className = "quiz-feedback incorrect-style";
+      scoreTrackingArray[qNum] = 0;
+    }
+    updateScore();
+  }
+
+  function changeQuestion(direction) {
+    document.getElementById(`qblock-${currentQuestion}`).classList.remove('active');
+    currentQuestion += direction;
+    if (currentQuestion > totalQuestions) { showResults(); return; }
+    document.getElementById(`qblock-${currentQuestion}`).classList.add('active');
+    document.getElementById('question-counter-text').innerText = `Question ${currentQuestion} of ${totalQuestions}`;
+    document.getElementById('quiz-progress-bar').style.width = `${(currentQuestion / totalQuestions) * 100}%`;
+    document.getElementById('prev-btn').disabled = (currentQuestion === 1);
+    document.getElementById('next-btn').innerText = (currentQuestion === totalQuestions) ? "Finish & See Score" : "Next Question";
+  }
+
+  function updateScore() { runningScore = scoreTrackingArray.reduce((a, b) => a + b, 0); }
+
+  function showResults() {
+    document.getElementById('cpo-exam-form').style.display = "none";
+    document.getElementById('quiz-header-region').style.display = "none";
+    document.getElementById('quiz-nav-controls').style.display = "none";
+    const ExtBlock = document.getElementById('quiz-results-screen');
+    const scoreBadge = document.getElementById('score-text-placeholder');
+    const commentary = document.getElementById('score-commentary-text');
+    ExtBlock.style.display = "block";
+    scoreBadge.innerText = `${runningScore} / ${totalQuestions}`;
+    const percentage = (runningScore / totalQuestions) * 100;
+    if (percentage >= 80) { commentary.innerText = "Superb! You possess top-tier calculation abilities for pool turnover dynamics, volumetric conversions, and sizing factors."; }
+    else if (percentage >= 60) { commentary.innerText = "Good job! Review the division steps required to shift flow values from hourly back into minutes."; }
+    else { commentary.innerText = "Hydraulics formulas have a lot of moving parts. Break down the conversion constants and try again!"; }
+  }
+
+  function restartQuiz() {
+    currentQuestion = 1; runningScore = 0; scoreTrackingArray.fill(0);
+    document.getElementById('cpo-exam-form').reset();
+    const feedbacks = document.querySelectorAll('.quiz-feedback');
+    feedbacks.forEach(f => { f.style.display = "none"; f.className = "quiz-feedback"; });
+    document.getElementById('cpo-exam-form').style.display = "block";
+    document.getElementById('quiz-header-region').style.display = "block";
+    document.getElementById('quiz-nav-controls').style.display = "flex";
+    document.getElementById('quiz-results-screen').style.display = "none";
+    document.querySelectorAll('.quiz-question-block').forEach(b => b.classList.remove('active'));
+    document.getElementById('qblock-1').classList.add('active');
+    document.getElementById('question-counter-text').innerText = `Question 1 of ${totalQuestions}`;
+    document.getElementById('quiz-progress-bar').style.width = "10%";
+    document.getElementById('prev-btn').disabled = true;
+    document.getElementById('next-btn').innerText = "Next Question";
+  }
+
+  function loadNextExam() {
+    window.open("https://www.spickandspanpools.com/cpo-practice-exam-5/", "_blank");
+  }
+</script>
+
+</body>
+</html>
+</script>
+
+</body>
+</html>
 </script>
 
 </body>
